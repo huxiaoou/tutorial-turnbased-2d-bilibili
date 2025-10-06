@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv2jummn8t4ty"]
+
+[ext_resource type="TileSet" uid="uid://uakrw1s8mhy5" path="res://resources/tile_set_nav.tres" id="1_b3lus"]
+[ext_resource type="PackedScene" uid="uid://bhsxabs38upuu" path="res://scenes/ui/grid_indicator.tscn" id="2_ei8re"]
+[ext_resource type="Script" uid="uid://cutan5ekly5dd" path="res://grids/layer_nav.gd" id="2_tj2tm"]
+
+[node name="SceneLevel" type="Node"]
+
+[node name="LayerNav" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_b3lus")
+script = ExtResource("2_tj2tm")
+
+[node name="GridIndicator" parent="LayerNav" instance=ExtResource("2_ei8re")]
