@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw2610htxsp85"]
+
+[ext_resource type="Script" uid="uid://0o42p5be7heg" path="res://scenes/actions/action_move.gd" id="1_wglfy"]
+
+[node name="ActionMove" type="Node"]
+script = ExtResource("1_wglfy")
+action_id = "action_move"
+action_name = "Move"
+metadata/_custom_type_script = "uid://dd811uvlcn6xx"

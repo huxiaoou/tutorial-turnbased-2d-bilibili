@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4hwnhgkxlxsn"]
+
+[ext_resource type="Script" uid="uid://dauehs47mbrvs" path="res://scenes/actions/action_bow.gd" id="1_toke5"]
+
+[node name="ActionBow" type="Node"]
+script = ExtResource("1_toke5")
+action_id = "action_bow"
+action_name = "Bow"
+metadata/_custom_type_script = "uid://dd811uvlcn6xx"
