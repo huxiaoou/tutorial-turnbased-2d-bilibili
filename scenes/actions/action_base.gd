@@ -10,10 +10,13 @@ var on_action_finished: Callable
 
 func _ready() -> void:
 	self.unit = self.owner
+	# print("Owner = " + str(self.owner)) # Unit
+	# print("Parent = " + str(self.get_parent())) # ManagerActions
 
-func start(target_grid_position: Vector2i, on_action_finished: Callable) -> void:
+func start(_target_grid_position: Vector2i, _on_action_finished: Callable) -> void:
+	print("Start Action " + self.action_name)
 	self.is_active = true
-	self.on_action_finished = on_action_finished
+	self.on_action_finished = _on_action_finished
 	
 func finish() -> void:
 	self.is_active = false

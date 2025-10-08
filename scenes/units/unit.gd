@@ -4,7 +4,6 @@ class_name Unit
 @onready var manager_actions: ManagerActions = $ManagerActions
 var grid_position: Vector2i:
 	get: return ManagerGrid.get_grid_position(self.global_position)
-var grid_path: Array[Vector2] = []
 var is_performing_action: bool = false
 
 func _unhandled_input(event: InputEvent) -> void:

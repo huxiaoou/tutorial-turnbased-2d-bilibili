@@ -4,8 +4,8 @@ class_name ActionMove
 var path: Array[Vector2]
 var speed: float = 200
 
-func start(target_grid_position: Vector2i, on_action_finished: Callable) -> void:
-	super.start(target_grid_position, on_action_finished)
+func start(target_grid_position: Vector2i, _on_action_finished: Callable) -> void:
+	super.start(target_grid_position, _on_action_finished)
 	self.path = ManagerGrid.get_nav_world_path(self.unit.grid_position, target_grid_position)
 	return
 
@@ -21,5 +21,6 @@ func _process(delta: float) -> void:
 		if self.unit.global_position == self.path[0]:
 			self.path.remove_at(0)
 	else:
+		print("No path avaiable, action finished.")
 		self.finish()
 	return
