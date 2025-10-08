@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqtbl3x7cfkkq"]
+
+[ext_resource type="Script" uid="uid://dh1gvwkdridl1" path="res://scenes/ui/ui_unit_actions.gd" id="1_p6oq4"]
+[ext_resource type="PackedScene" uid="uid://csf3yx3t7uwds" path="res://scenes/ui/ui_action_card.tscn" id="2_7nfdw"]
+
+[node name="UIGame" type="CanvasLayer"]
+
+[node name="UIUnitActions" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 24
+script = ExtResource("1_p6oq4")
+ui_action_card_scene = ExtResource("2_7nfdw")
+
+[node name="MarginContainer" type="MarginContainer" parent="UIUnitActions"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="ActionContainer" type="HBoxContainer" parent="UIUnitActions/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24

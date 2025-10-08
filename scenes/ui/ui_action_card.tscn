@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://csf3yx3t7uwds"]
+
+[ext_resource type="Script" uid="uid://b7emwinkhyylc" path="res://scenes/ui/ui_action_card.gd" id="1_cfdho"]
+
+[node name="UIActionCard" type="Button"]
+custom_minimum_size = Vector2(240, 24)
+offset_right = 207.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 48
+text = "Action Name"
+script = ExtResource("1_cfdho")
