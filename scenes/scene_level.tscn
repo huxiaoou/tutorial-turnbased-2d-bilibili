@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=4 uid="uid://bv2jummn8t4ty"]
+[gd_scene load_steps=7 format=4 uid="uid://bv2jummn8t4ty"]
 
 [ext_resource type="TileSet" uid="uid://uakrw1s8mhy5" path="res://resources/tile_set_nav.tres" id="1_b3lus"]
 [ext_resource type="PackedScene" uid="uid://dqtbl3x7cfkkq" path="res://scenes/ui/ui_game.tscn" id="1_uj0sh"]
+[ext_resource type="Script" uid="uid://bgcckr6adkpvb" path="res://scenes/scene_level.gd" id="1_voka6"]
 [ext_resource type="PackedScene" uid="uid://bhsxabs38upuu" path="res://scenes/ui/grid_indicator.tscn" id="2_ei8re"]
 [ext_resource type="Script" uid="uid://cutan5ekly5dd" path="res://grids/layer_nav.gd" id="2_tj2tm"]
 [ext_resource type="PackedScene" uid="uid://t4evnlhbrmw4" path="res://scenes/units/unit.tscn" id="4_1quhx"]
 
 [node name="SceneLevel" type="Node"]
+script = ExtResource("1_voka6")
 
 [node name="UIGame" parent="." instance=ExtResource("1_uj0sh")]
 
@@ -15,7 +17,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAAAAAEAAAABAAAAAAAAAAIAAAABAAA
 tile_set = ExtResource("1_b3lus")
 script = ExtResource("2_tj2tm")
 
-[node name="GridIndicator" parent="LayerNav" instance=ExtResource("2_ei8re")]
+[node name="GridIndicator" parent="." instance=ExtResource("2_ei8re")]
 
 [node name="Unit" parent="." instance=ExtResource("4_1quhx")]
 position = Vector2(48, 64)
