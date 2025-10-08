@@ -24,3 +24,17 @@ func _process(delta: float) -> void:
 		print("No path avaiable, action finished.")
 		self.finish()
 	return
+
+func get_action_grids(unit_grid: Vector2i = self.unit.grid_position) -> Array[Vector2i]:
+	var results: Array[Vector2i] = []
+	var max_length: int = 3
+	for i in range(-max_length, max_length + 1):
+		for j in range(-max_length, max_length + 1):
+			if i == 0 and j == 0:
+				continue
+			var potential_grid: Vector2i = unit_grid + Vector2i(i, j)
+			var grid_path: Array[Vector2i] = ManagerGrid.get_nav_grid_path(unit_grid, potential_grid)
+			var length: float = ManagerGrid.get_grid_path_length(grid_path)
+			if length <= max_length and length > 0 and ManagerGrid.is_grid_walkable(potential_grid):
+				results.append(potential_grid)
+	return results

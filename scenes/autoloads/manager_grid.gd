@@ -26,6 +26,17 @@ func get_nav_world_path(start_grid_position: Vector2i, end_grid_position: Vector
 		var world_position = self.get_world_position(grid_position)
 		world_path.append(world_position)
 	return world_path
+	
+func get_grid_path_length(grid_path: Array[Vector2i]) -> float:
+	if grid_path.size() <= 1:
+		return 0
+	var length: float = 0
+	for i in range(1, grid_path.size()):
+		if grid_path[i-1].x != grid_path[i].x and grid_path[i-1].y != grid_path[i].y:
+			length += sqrt(2)
+		else:
+			length += 1
+	return length
 
 func is_valid_grid(grid_position: Vector2i) -> bool:
 	return self.layer_nav.grid_data_dict.has(grid_position)
