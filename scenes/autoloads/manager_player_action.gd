@@ -10,6 +10,7 @@ func set_action_selected(action: ActionBase) -> void:
 		return
 	print("Select " + action.action_name)
 	self.action_selected = action
+	ManagerGrid.visualize_grids(action_selected.get_action_grids(), action_selected.grid_color)
 	return
 
 func on_action_finished() -> void:
@@ -21,6 +22,8 @@ func try_perform_action_selected() -> void:
 	if self.action_selected == null:
 		return
 	var target_grid_position: Vector2i = ManagerGrid.get_mouse_grid_position()
+	if not action_selected.get_action_grids().has(target_grid_position):
+		return
 	self.is_performing_action = true
 	self.action_selected.start(
 		target_grid_position,

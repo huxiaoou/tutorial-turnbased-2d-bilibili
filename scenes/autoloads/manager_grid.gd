@@ -1,6 +1,7 @@
 extends Node
 
 var layer_nav: LayerNav
+var layer_vis: TileMapLayer
 
 func get_grid_position(world_position: Vector2) -> Vector2i:
 	return self.layer_nav.local_to_map(layer_nav.to_local(world_position))
@@ -63,4 +64,10 @@ func set_grid_occupant(grid_position: Vector2i, unit: Unit) -> void:
 	if not self.is_valid_grid(grid_position):
 		return
 	self.layer_nav.grid_data_dict[grid_position].occupant = unit
+	return
+
+func visualize_grids(grids: Array[Vector2i], color: Color = Color.WHITE) -> void:
+	layer_vis.clear()
+	layer_vis.modulate = color
+	layer_vis.set_cells_terrain_connect(grids, 0, 0)
 	return

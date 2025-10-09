@@ -6,4 +6,5 @@
 script = ExtResource("1_v06hj")
 action_id = "action_fireball"
 action_name = "Fireball"
+grid_color = Color(0.68, 0.124667, 0, 1)
 metadata/_custom_type_script = "uid://dd811uvlcn6xx"

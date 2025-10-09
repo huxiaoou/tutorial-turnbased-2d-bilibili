@@ -6,4 +6,5 @@
 script = ExtResource("1_toke5")
 action_id = "action_bow"
 action_name = "Bow"
+grid_color = Color(0, 0.53, 0.00883332, 1)
 metadata/_custom_type_script = "uid://dd811uvlcn6xx"

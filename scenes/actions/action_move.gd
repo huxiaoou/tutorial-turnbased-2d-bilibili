@@ -20,6 +20,10 @@ func _process(delta: float) -> void:
 		self.move(self.path[0], delta)
 		if self.unit.global_position == self.path[0]:
 			self.path.remove_at(0)
+			ManagerGrid.visualize_grids(
+				ManagerPlayerAction.action_selected.get_action_grids(), 
+				ManagerPlayerAction.action_selected.grid_color
+			)
 	else:
 		print("No path avaiable, action finished.")
 		self.finish()

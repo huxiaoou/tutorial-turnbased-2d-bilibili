@@ -3,6 +3,7 @@ class_name	ActionBase
 
 @export var action_id: String
 @export var action_name: String
+@export var grid_color: Color = Color.WHITE
 
 var unit: Unit
 var is_active: bool = false

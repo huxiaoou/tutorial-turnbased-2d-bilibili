@@ -6,4 +6,5 @@
 script = ExtResource("1_7benf")
 action_id = "action_sword"
 action_name = "Sword"
+grid_color = Color(0.117647, 0.137255, 0.807843, 1)
 metadata/_custom_type_script = "uid://dd811uvlcn6xx"
