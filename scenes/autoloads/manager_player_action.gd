@@ -1,7 +1,20 @@
 extends Node
 
+signal unit_is_selected(unit: Unit)
+
 var is_performing_action: bool = false
 var action_selected: ActionBase = null
+var unit_selected: Unit = null
+
+func set_unit_selected(unit: Unit) -> void:
+	if is_performing_action:
+		return
+	if self.unit_selected == unit:
+		return
+	self.unit_selected = unit
+	print(unit.name + " selected")	
+	unit_is_selected.emit(unit)
+	self.set_action_selected(unit.manager_actions.get_action("action_move"))
 
 func set_action_selected(action: ActionBase) -> void:
 	if self.is_performing_action:

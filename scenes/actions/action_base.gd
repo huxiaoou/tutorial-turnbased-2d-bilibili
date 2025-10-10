@@ -23,7 +23,7 @@ func finish() -> void:
 	self.is_active = false
 	self.on_action_finished.call()
 
-func get_action_grids(unit_grid: Vector2i = self.unit.grid_position) -> Array[Vector2i]:
+func get_action_grids(_unit_grid: Vector2i = self.unit.grid_position) -> Array[Vector2i]:
 	return []
 
 func is_obstacle(grid_position: Vector2i) -> bool:

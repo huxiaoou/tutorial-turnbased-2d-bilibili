@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bv2jummn8t4ty"]
+[gd_scene load_steps=9 format=4 uid="uid://bv2jummn8t4ty"]
 
 [ext_resource type="TileSet" uid="uid://uakrw1s8mhy5" path="res://resources/tile_set_nav.tres" id="1_b3lus"]
 [ext_resource type="PackedScene" uid="uid://dqtbl3x7cfkkq" path="res://scenes/ui/ui_game.tscn" id="1_uj0sh"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cutan5ekly5dd" path="res://grids/layer_nav.gd" id="2_tj2tm"]
 [ext_resource type="PackedScene" uid="uid://t4evnlhbrmw4" path="res://scenes/units/unit.tscn" id="4_1quhx"]
 [ext_resource type="TileSet" uid="uid://bqst0lm8obls4" path="res://resources/tile_set_visualize.tres" id="5_20ppl"]
+[ext_resource type="PackedScene" uid="uid://b2rfjxomro6u5" path="res://scenes/units/unit2.tscn" id="8_ic11q"]
 
 [node name="SceneLevel" type="Node"]
 script = ExtResource("1_voka6")
@@ -24,4 +25,7 @@ tile_set = ExtResource("5_20ppl")
 [node name="GridIndicator" parent="." instance=ExtResource("2_ei8re")]
 
 [node name="Unit" parent="." instance=ExtResource("4_1quhx")]
-position = Vector2(56, 56)
+position = Vector2(328, 168.791)
+
+[node name="Unit2" parent="." instance=ExtResource("8_ic11q")]
+position = Vector2(248.344, 168.791)

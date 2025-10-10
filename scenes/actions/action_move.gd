@@ -7,6 +7,10 @@ var speed: float = 200
 func start(target_grid_position: Vector2i, _on_action_finished: Callable) -> void:
 	super.start(target_grid_position, _on_action_finished)
 	self.path = ManagerGrid.get_nav_world_path(self.unit.grid_position, target_grid_position)
+	ManagerGrid.set_grid_walkable(unit.grid_position, true)
+	ManagerGrid.set_grid_occupant(unit.grid_position, null)
+	ManagerGrid.set_grid_walkable(target_grid_position, false)
+	ManagerGrid.set_grid_occupant(target_grid_position, self.unit)
 	return
 
 func move(_target_global_position: Vector2, delta: float) -> void:
