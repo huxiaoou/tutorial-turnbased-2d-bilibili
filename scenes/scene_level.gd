@@ -1,6 +1,7 @@
 extends Node
 
 @onready var layer_visual: TileMapLayer = $LayerVisual
+@onready var state_machine: StateMachine = $StateMachine
 
 func _ready() -> void:
 	ManagerGrid.layer_vis = layer_visual
@@ -13,3 +14,4 @@ func _ready() -> void:
 	if not ManagerGame.player_units.is_empty():
 		var unit: Unit = ManagerGame.player_units[0]
 		ManagerPlayerAction.set_unit_selected(unit)
+	state_machine.launch()

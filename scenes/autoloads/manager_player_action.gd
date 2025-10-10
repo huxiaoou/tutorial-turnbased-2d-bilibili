@@ -42,14 +42,3 @@ func try_perform_action_selected() -> void:
 		target_grid_position,
 		on_action_finished
 	)
-
-func _unhandled_input(event: InputEvent) -> void:
-	# Not using input
-	# differeniate from left mouse click in ui
-	# process after all the UI input been processed
-	# so preventing unit moving when clicking UI
-	if self.is_performing_action:
-		return
-	if event.is_action_pressed("left_mouse_click"):
-		self.try_perform_action_selected()
-	return
