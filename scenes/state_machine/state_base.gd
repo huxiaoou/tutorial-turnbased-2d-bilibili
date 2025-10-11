@@ -6,6 +6,7 @@ signal state_changed(state_name: String)
 @export var state_name: String
 
 func enter() -> void:
+	print("Enter " + self.state_name)
 	return
 
 func on_process(_delta: float) -> void:

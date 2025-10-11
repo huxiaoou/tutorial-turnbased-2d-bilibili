@@ -3,7 +3,7 @@ extends StateBase
 var listen_for_input: bool = false
 
 func enter() -> void:
-	print("Enter " + self.state_name)
+	super.enter()
 	self.listen_for_input = true
 	
 func exit() -> void:
