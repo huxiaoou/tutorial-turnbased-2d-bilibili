@@ -9,6 +9,6 @@ is_enemy = true
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("2_tgvy6")
-frame_progress = 0.677087
+frame_progress = 0.459261
 
 [node name="ActionFireball" parent="ManagerActions/ActionMove" index="0" instance=ExtResource("3_na5ui")]

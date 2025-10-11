@@ -9,6 +9,6 @@ is_enemy = true
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("2_euajl")
-frame_progress = 0.352435
+frame_progress = 0.982234
 
 [node name="ActionBow" parent="ManagerActions" index="1" instance=ExtResource("3_wddkw")]

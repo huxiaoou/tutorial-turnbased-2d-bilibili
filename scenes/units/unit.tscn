@@ -18,6 +18,9 @@ sprite_frames = ExtResource("2_fe0lq")
 animation = &"idle"
 autoplay = "idle"
 
+[node name="SlotWeapon" type="Node2D" parent="AnimatedSprite2D"]
+position = Vector2(3, 6)
+
 [node name="ManagerActions" parent="." instance=ExtResource("3_cx6aj")]
 
 [node name="ActionMove" parent="ManagerActions" instance=ExtResource("4_6k8ya")]

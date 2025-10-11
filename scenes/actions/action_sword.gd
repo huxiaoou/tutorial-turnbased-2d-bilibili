@@ -1,9 +1,17 @@
 extends ActionBase
 class_name ActionSword
 
+@export var scene_sword: PackedScene
+
 func start(target_grid_position: Vector2i, _on_action_finished: Callable) -> void:
 	super.start(target_grid_position, _on_action_finished)
-	self.finish()
+	if target_grid_position.x > unit.grid_position.x:
+		unit.animated_sprite_2d.scale.x = 1
+	elif target_grid_position.x < unit.grid_position.x:
+		unit.animated_sprite_2d.scale.x = -1
+	var sword: Sword = scene_sword.instantiate()
+	unit.slot_weapon.add_child(sword)
+	sword.set_up(self.finish, unit, target_grid_position)
 
 func get_action_grids(unit_grid: Vector2i = self.unit.grid_position) -> Array[Vector2i]:
 	var results: Array[Vector2i] = []
