@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqtbl3x7cfkkq"]
+[gd_scene load_steps=4 format=3 uid="uid://dqtbl3x7cfkkq"]
 
 [ext_resource type="Script" uid="uid://dh1gvwkdridl1" path="res://scenes/ui/ui_unit_actions.gd" id="1_p6oq4"]
 [ext_resource type="PackedScene" uid="uid://csf3yx3t7uwds" path="res://scenes/ui/ui_action_card.tscn" id="2_7nfdw"]
+[ext_resource type="Script" uid="uid://0vf2fgs8gih7" path="res://scenes/ui/ui_turn.gd" id="3_cb1ij"]
 
 [node name="UIGame" type="CanvasLayer"]
 
@@ -23,3 +24,32 @@ size_flags_vertical = 8
 [node name="ActionContainer" type="HBoxContainer" parent="UIUnitActions/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 24
+
+[node name="UITurn" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+script = ExtResource("3_cb1ij")
+
+[node name="ButtonEndTurn" type="Button" parent="UITurn"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 36
+text = "End Turn"
+
+[node name="LabelTurn" type="Label" parent="UITurn"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 36
+text = "Player Turn"
+horizontal_alignment = 1
+vertical_alignment = 1
