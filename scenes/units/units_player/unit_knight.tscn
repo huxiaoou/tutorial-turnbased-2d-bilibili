@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkw3mmjq5tuys"]
+
+[ext_resource type="PackedScene" uid="uid://t4evnlhbrmw4" path="res://scenes/units/unit.tscn" id="1_hvaeg"]
+[ext_resource type="PackedScene" uid="uid://co2fpjcseh17l" path="res://scenes/actions/action_sword.tscn" id="3_q13wn"]
+
+[node name="UnitKnight" instance=ExtResource("1_hvaeg")]
+
+[node name="ActionSword" parent="ManagerActions" index="1" instance=ExtResource("3_q13wn")]

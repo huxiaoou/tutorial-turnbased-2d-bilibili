@@ -11,9 +11,14 @@ func start(target_grid_position: Vector2i, _on_action_finished: Callable) -> voi
 	ManagerGrid.set_grid_occupant(unit.grid_position, null)
 	ManagerGrid.set_grid_walkable(target_grid_position, false)
 	ManagerGrid.set_grid_occupant(target_grid_position, self.unit)
+	unit.animated_sprite_2d.play("run")
 	return
 
 func move(_target_global_position: Vector2, delta: float) -> void:
+	if unit.position.x > _target_global_position.x:
+		unit.animated_sprite_2d.scale.x = -1
+	elif unit.position.x < _target_global_position.x:
+		unit.animated_sprite_2d.scale.x = 1
 	self.unit.global_position = self.unit.global_position.move_toward(_target_global_position, self.speed * delta)
 	return
 
@@ -30,6 +35,7 @@ func _process(delta: float) -> void:
 			)
 	else:
 		print("No path avaiable, action finished.")
+		unit.animated_sprite_2d.play("idle")
 		self.finish()
 	return
 

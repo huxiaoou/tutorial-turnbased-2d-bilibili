@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbsihatkqu3ml"]
+
+[ext_resource type="PackedScene" uid="uid://t4evnlhbrmw4" path="res://scenes/units/unit.tscn" id="1_rvbkm"]
+[ext_resource type="SpriteFrames" uid="uid://tcwwpgi61ecq" path="res://resources/animations/anim_enemy/anim_orc.tres" id="2_euajl"]
+[ext_resource type="PackedScene" uid="uid://d4hwnhgkxlxsn" path="res://scenes/actions/action_bow.tscn" id="3_wddkw"]
+
+[node name="EnemyOrc" instance=ExtResource("1_rvbkm")]
+is_enemy = true
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = ExtResource("2_euajl")
+frame_progress = 0.352435
+
+[node name="ActionBow" parent="ManagerActions" index="1" instance=ExtResource("3_wddkw")]

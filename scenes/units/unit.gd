@@ -4,6 +4,7 @@ class_name Unit
 @onready var manager_actions: ManagerActions = $ManagerActions
 @onready var area_unit: AreaUnit = $AreaUnit
 @export var is_enemy: bool = false
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var grid_position: Vector2i:
 	get: return ManagerGrid.get_grid_position(self.global_position)

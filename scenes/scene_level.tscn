@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bv2jummn8t4ty"]
+[gd_scene load_steps=13 format=4 uid="uid://bv2jummn8t4ty"]
 
 [ext_resource type="TileSet" uid="uid://uakrw1s8mhy5" path="res://resources/tile_set_nav.tres" id="1_b3lus"]
 [ext_resource type="PackedScene" uid="uid://dqtbl3x7cfkkq" path="res://scenes/ui/ui_game.tscn" id="1_uj0sh"]
@@ -6,11 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bhsxabs38upuu" path="res://scenes/ui/grid_indicator.tscn" id="2_ei8re"]
 [ext_resource type="Script" uid="uid://cutan5ekly5dd" path="res://grids/layer_nav.gd" id="2_tj2tm"]
 [ext_resource type="PackedScene" uid="uid://dpfhji4f4xi0t" path="res://scenes/state_machine/state_machine.tscn" id="3_ymgmg"]
-[ext_resource type="PackedScene" uid="uid://t4evnlhbrmw4" path="res://scenes/units/unit.tscn" id="4_1quhx"]
 [ext_resource type="Script" uid="uid://bc0ofvyucpbl8" path="res://scenes/state_machine/state_turn_player.gd" id="4_lnjqj"]
 [ext_resource type="TileSet" uid="uid://bqst0lm8obls4" path="res://resources/tile_set_visualize.tres" id="5_20ppl"]
 [ext_resource type="Script" uid="uid://b5q085ye26883" path="res://scenes/state_machine/state_turn_enemy.gd" id="5_urbar"]
-[ext_resource type="PackedScene" uid="uid://b2rfjxomro6u5" path="res://scenes/units/unit2.tscn" id="8_ic11q"]
+[ext_resource type="PackedScene" uid="uid://bkw3mmjq5tuys" path="res://scenes/units/units_player/unit_knight.tscn" id="10_lnjqj"]
+[ext_resource type="PackedScene" uid="uid://b67dc6xw68cyo" path="res://scenes/units/units_player/unit_archer.tscn" id="11_bjvi2"]
+[ext_resource type="PackedScene" uid="uid://c4s8p4ve1qt3e" path="res://scenes/units/units_player/unit_wizard.tscn" id="12_sghvq"]
 
 [node name="SceneLevel" type="Node"]
 script = ExtResource("1_voka6")
@@ -40,8 +41,11 @@ tile_set = ExtResource("5_20ppl")
 
 [node name="GridIndicator" parent="." instance=ExtResource("2_ei8re")]
 
-[node name="Unit" parent="." instance=ExtResource("4_1quhx")]
-position = Vector2(328, 168.791)
+[node name="UnitKnight" parent="." instance=ExtResource("10_lnjqj")]
+position = Vector2(264, 200)
 
-[node name="Unit2" parent="." instance=ExtResource("8_ic11q")]
-position = Vector2(248.344, 168.791)
+[node name="UnitArcher" parent="." instance=ExtResource("11_bjvi2")]
+position = Vector2(264, 152)
+
+[node name="UnitWizard" parent="." instance=ExtResource("12_sghvq")]
+position = Vector2(312, 200)

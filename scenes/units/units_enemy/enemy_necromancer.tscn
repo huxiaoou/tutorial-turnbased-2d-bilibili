@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbp2j23abnpxu"]
+
+[ext_resource type="PackedScene" uid="uid://t4evnlhbrmw4" path="res://scenes/units/unit.tscn" id="1_mmii5"]
+[ext_resource type="SpriteFrames" uid="uid://scsf8wp2k6nh" path="res://resources/animations/anim_enemy/anim_necromancer.tres" id="2_tgvy6"]
+[ext_resource type="PackedScene" uid="uid://dsb36aduvfr2q" path="res://scenes/actions/action_fireball.tscn" id="3_na5ui"]
+
+[node name="EnemyNecromancer" instance=ExtResource("1_mmii5")]
+is_enemy = true
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = ExtResource("2_tgvy6")
+frame_progress = 0.677087
+
+[node name="ActionFireball" parent="ManagerActions/ActionMove" index="0" instance=ExtResource("3_na5ui")]

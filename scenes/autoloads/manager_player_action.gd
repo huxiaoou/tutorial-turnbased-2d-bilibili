@@ -9,7 +9,7 @@ var unit_selected: Unit = null
 func set_unit_selected(unit: Unit) -> void:
 	if is_performing_action:
 		return
-	if self.unit_selected == unit:
+	if self.unit_selected == unit or unit.is_enemy:
 		return
 	self.unit_selected = unit
 	print(unit.name + " selected")	
