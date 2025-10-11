@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4hwnhgkxlxsn"]
+[gd_scene load_steps=3 format=3 uid="uid://d4hwnhgkxlxsn"]
 
 [ext_resource type="Script" uid="uid://dauehs47mbrvs" path="res://scenes/actions/action_bow.gd" id="1_toke5"]
+[ext_resource type="PackedScene" uid="uid://cg51jptijft1l" path="res://scenes/weapons/bow.tscn" id="2_fu4od"]
 
 [node name="ActionBow" type="Node"]
 script = ExtResource("1_toke5")
+scene_bow = ExtResource("2_fu4od")
 action_id = "action_bow"
 action_name = "Bow"
 grid_color = Color(0, 0.53, 0.00883332, 1)

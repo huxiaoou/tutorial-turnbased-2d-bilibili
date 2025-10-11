@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4rbyf1ni8hf8"]
+
+[ext_resource type="Script" uid="uid://byjlpf1s1q4ih" path="res://scenes/weapons/projectile.gd" id="1_j1yim"]
+[ext_resource type="Texture2D" uid="uid://do2awlfspqpap" path="res://assets/weapons/Arrow.png" id="1_sr7iq"]
+
+[node name="Arrow" type="Node2D"]
+script = ExtResource("1_j1yim")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("1_sr7iq")
