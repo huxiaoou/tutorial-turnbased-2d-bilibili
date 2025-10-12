@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgs6n46cwcena"]
+
+[ext_resource type="Texture2D" uid="uid://dsilpbdo0l2cw" path="res://assets/effect/SPS_Fireball.png" id="1_bxiq0"]
+[ext_resource type="Script" uid="uid://bcuyp6fyyvfr3" path="res://scenes/weapons/fireball.gd" id="1_uu6q0"]
+[ext_resource type="PackedScene" uid="uid://crfkh8rw1sl73" path="res://scenes/effects/effect_impact.tscn" id="2_jve0i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu6q0"]
+atlas = ExtResource("1_bxiq0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jve0i"]
+atlas = ExtResource("1_bxiq0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y0vp"]
+atlas = ExtResource("1_bxiq0")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy1ok"]
+atlas = ExtResource("1_bxiq0")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xcukv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu6q0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jve0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5y0vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy1ok")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="fireball" type="Node2D"]
+script = ExtResource("1_uu6q0")
+scene_effect_impact = ExtResource("2_jve0i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_xcukv")
+autoplay = "default"
+frame_progress = 0.158915

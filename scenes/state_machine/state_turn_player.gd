@@ -9,7 +9,7 @@ func enter() -> void:
 	self.listen_for_input = true
 	self.go_to_enemy_turn = false
 
-func on_process(delta) -> void:
+func on_process(_delta) -> void:
 	if self.go_to_enemy_turn:
 		state_changed.emit("StateTurnEnemy")
 	return

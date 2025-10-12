@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://crfkh8rw1sl73"]
+
+[ext_resource type="Texture2D" uid="uid://ba1j1an8gap84" path="res://assets/effect/SPS_Explosion.png" id="1_f31fc"]
+[ext_resource type="Script" uid="uid://biedpeplcjvwx" path="res://scenes/effects/effect_impact.gd" id="2_x3ugh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3ugh"]
+atlas = ExtResource("1_f31fc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_018sy"]
+atlas = ExtResource("1_f31fc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j4h6"]
+atlas = ExtResource("1_f31fc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p77ex"]
+atlas = ExtResource("1_f31fc")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ch52"]
+atlas = ExtResource("1_f31fc")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plomj"]
+atlas = ExtResource("1_f31fc")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shuxe"]
+atlas = ExtResource("1_f31fc")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lfx2l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3ugh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_018sy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j4h6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p77ex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ch52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plomj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shuxe")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="EffectImpact" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_lfx2l")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
+script = ExtResource("2_x3ugh")

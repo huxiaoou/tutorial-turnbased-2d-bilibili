@@ -1,9 +1,19 @@
 extends ActionBase
 class_name ActionFireball
 
+@export var scene_fireball: PackedScene
+
 func start(target_grid_position: Vector2i, _on_action_finished: Callable) -> void:
 	super.start(target_grid_position, _on_action_finished)
-	self.finish()
+	if target_grid_position.x > unit.grid_position.x:
+		unit.animated_sprite_2d.scale.x = 1
+	elif target_grid_position.x < unit.grid_position.x:
+		unit.animated_sprite_2d.scale.x = -1
+	var fireball: Projectile = self.scene_fireball.instantiate()
+	get_tree().current_scene.add_child(fireball)
+	fireball.global_position = unit.slot_weapon.global_position
+	fireball.set_up(finish, unit, target_grid_position)
+	
 
 func get_action_grids(unit_grid: Vector2i = self.unit.grid_position) -> Array[Vector2i]:
 	var results: Array[Vector2i] = []

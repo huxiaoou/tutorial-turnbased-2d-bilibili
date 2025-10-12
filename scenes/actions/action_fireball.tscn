@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsb36aduvfr2q"]
+[gd_scene load_steps=3 format=3 uid="uid://dsb36aduvfr2q"]
 
 [ext_resource type="Script" uid="uid://3xspp1f44koe" path="res://scenes/actions/action_fireball.gd" id="1_v06hj"]
+[ext_resource type="PackedScene" uid="uid://cgs6n46cwcena" path="res://scenes/weapons/fireball.tscn" id="2_gk4oh"]
 
 [node name="ActionFireball" type="Node"]
 script = ExtResource("1_v06hj")
+scene_fireball = ExtResource("2_gk4oh")
 action_id = "action_fireball"
 action_name = "Fireball"
 grid_color = Color(0.68, 0.124667, 0, 1)

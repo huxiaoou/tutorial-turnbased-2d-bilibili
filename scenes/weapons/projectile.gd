@@ -3,6 +3,7 @@ class_name Projectile
 
 @export var damage: int = 5
 @export var speed: float = 500
+@export var scene_effect_impact: PackedScene
 
 var finish_action: Callable
 var unit: Unit
@@ -24,6 +25,10 @@ func deal_damage() -> void:
 func _process(delta: float) -> void:
 	self.global_position = self.global_position.move_toward(target_world_position, delta * self.speed)
 	if self.global_position == self.target_world_position:
+		if self.scene_effect_impact != null:
+			var effect_impact: EffectImpact = self.scene_effect_impact.instantiate()
+			get_tree().current_scene.add_child(effect_impact)
+			effect_impact.global_position = global_position
 		self.deal_damage()
 		self.finish_action.call()
 		queue_free()

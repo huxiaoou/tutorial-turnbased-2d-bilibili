@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bv2jummn8t4ty"]
+[gd_scene load_steps=16 format=4 uid="uid://bv2jummn8t4ty"]
 
 [ext_resource type="TileSet" uid="uid://uakrw1s8mhy5" path="res://resources/tile_set_nav.tres" id="1_b3lus"]
 [ext_resource type="PackedScene" uid="uid://dqtbl3x7cfkkq" path="res://scenes/ui/ui_game.tscn" id="1_uj0sh"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://bkw3mmjq5tuys" path="res://scenes/units/units_player/unit_knight.tscn" id="10_lnjqj"]
 [ext_resource type="PackedScene" uid="uid://b67dc6xw68cyo" path="res://scenes/units/units_player/unit_archer.tscn" id="11_bjvi2"]
 [ext_resource type="PackedScene" uid="uid://c4s8p4ve1qt3e" path="res://scenes/units/units_player/unit_wizard.tscn" id="12_sghvq"]
+[ext_resource type="PackedScene" uid="uid://bo1cg7l4v1kjm" path="res://scenes/units/units_enemy/enemy_skeleton.tscn" id="13_xuaps"]
+[ext_resource type="PackedScene" uid="uid://cbsihatkqu3ml" path="res://scenes/units/units_enemy/enemy_orc.tscn" id="14_y4c5b"]
+[ext_resource type="PackedScene" uid="uid://dbp2j23abnpxu" path="res://scenes/units/units_enemy/enemy_necromancer.tscn" id="15_fpjne"]
 
 [node name="SceneLevel" type="Node"]
 script = ExtResource("1_voka6")
@@ -49,3 +52,12 @@ position = Vector2(264, 152)
 
 [node name="UnitWizard" parent="." instance=ExtResource("12_sghvq")]
 position = Vector2(312, 200)
+
+[node name="EnemySkeleton" parent="." instance=ExtResource("13_xuaps")]
+position = Vector2(296, 184)
+
+[node name="EnemyOrc" parent="." instance=ExtResource("14_y4c5b")]
+position = Vector2(280, 168)
+
+[node name="EnemyNecromancer" parent="." instance=ExtResource("15_fpjne")]
+position = Vector2(312, 152)
