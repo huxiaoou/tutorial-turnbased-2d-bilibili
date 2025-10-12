@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://t4evnlhbrmw4"]
+[gd_scene load_steps=8 format=3 uid="uid://t4evnlhbrmw4"]
 
 [ext_resource type="Script" uid="uid://cc3cr1st5ubru" path="res://scenes/units/unit.gd" id="1_qgilm"]
 [ext_resource type="SpriteFrames" uid="uid://dcqkrlwx8an0u" path="res://resources/animations/anim_players/anim_knight.tres" id="2_fe0lq"]
 [ext_resource type="PackedScene" uid="uid://i1b48mmy62ra" path="res://scenes/managers/manager_actions.tscn" id="3_cx6aj"]
 [ext_resource type="PackedScene" uid="uid://bw2610htxsp85" path="res://scenes/actions/action_move.tscn" id="4_6k8ya"]
+[ext_resource type="PackedScene" uid="uid://bqvvx1kpcriw6" path="res://scenes/units/health.tscn" id="6_rk2mp"]
 [ext_resource type="Script" uid="uid://cmhuth3eh4km7" path="res://scenes/units/area_unit.gd" id="8_fe0lq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44d7s"]
@@ -30,3 +31,5 @@ script = ExtResource("8_fe0lq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaUnit"]
 shape = SubResource("RectangleShape2D_44d7s")
+
+[node name="Health" parent="." instance=ExtResource("6_rk2mp")]
