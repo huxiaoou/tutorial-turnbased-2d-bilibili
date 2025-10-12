@@ -21,6 +21,7 @@ ManagerGrid="*res://scenes/autoloads/manager_grid.tscn"
 ManagerPlayerAction="*res://scenes/autoloads/manager_player_action.tscn"
 ManagerGame="*res://scenes/autoloads/manager_game.tscn"
 ManagerTurn="*res://scenes/autoloads/manager_turn.tscn"
+ManagerEnemyAction="*res://scenes/autoloads/manager_enemy_action.tscn"
 
 [display]
 
