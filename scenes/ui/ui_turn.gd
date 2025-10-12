@@ -10,6 +10,8 @@ func _ready() -> void:
 	
 	
 func on_button_end_turn_pressed() -> void:
+	if ManagerPlayerAction.is_performing_action or ManagerEnemyAction.is_performing_action:
+		return
 	ManagerTurn.start_turn_enemy()
 	return
 

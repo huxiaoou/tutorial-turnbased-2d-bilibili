@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbp2j23abnpxu"]
+[gd_scene load_steps=5 format=3 uid="uid://dbp2j23abnpxu"]
 
 [ext_resource type="PackedScene" uid="uid://t4evnlhbrmw4" path="res://scenes/units/unit.tscn" id="1_mmii5"]
 [ext_resource type="SpriteFrames" uid="uid://scsf8wp2k6nh" path="res://resources/animations/anim_enemy/anim_necromancer.tres" id="2_tgvy6"]
 [ext_resource type="PackedScene" uid="uid://dsb36aduvfr2q" path="res://scenes/actions/action_fireball.tscn" id="3_na5ui"]
+[ext_resource type="Script" uid="uid://dnbgvpdy5ps5i" path="res://scenes/units/units_enemy/ai_enemy_necromancer.gd" id="4_llp25"]
 
 [node name="EnemyNecromancer" instance=ExtResource("1_mmii5")]
 is_enemy = true
@@ -11,4 +12,9 @@ is_enemy = true
 sprite_frames = ExtResource("2_tgvy6")
 frame_progress = 0.459261
 
-[node name="ActionFireball" parent="ManagerActions/ActionMove" index="0" instance=ExtResource("3_na5ui")]
+[node name="ActionFireball" parent="ManagerActions" index="1" instance=ExtResource("3_na5ui")]
+
+[node name="AIEnemy" type="Node" parent="." index="2" node_paths=PackedStringArray("unit")]
+script = ExtResource("4_llp25")
+unit = NodePath("..")
+metadata/_custom_type_script = "uid://dg7a4nlbijxwi"

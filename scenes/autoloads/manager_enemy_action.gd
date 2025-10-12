@@ -23,7 +23,7 @@ func try_perform_enemy_action(enemy: Unit) -> bool:
 	if data_ai_action == null:
 		return false
 	
-	is_performing_action = false
+	is_performing_action = true
 	data_ai_action.action.start(
 		data_ai_action.grid_position,
 		on_action_finished,

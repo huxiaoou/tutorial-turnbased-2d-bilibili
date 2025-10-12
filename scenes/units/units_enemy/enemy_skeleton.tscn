@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo1cg7l4v1kjm"]
+[gd_scene load_steps=5 format=3 uid="uid://bo1cg7l4v1kjm"]
 
 [ext_resource type="PackedScene" uid="uid://t4evnlhbrmw4" path="res://scenes/units/unit.tscn" id="1_akk1r"]
 [ext_resource type="SpriteFrames" uid="uid://bf6f7eewp7lwf" path="res://resources/animations/anim_enemy/anim_skeleton.tres" id="2_p1yjk"]
 [ext_resource type="PackedScene" uid="uid://co2fpjcseh17l" path="res://scenes/actions/action_sword.tscn" id="3_ykdqh"]
+[ext_resource type="Script" uid="uid://blx8x3u5t78g3" path="res://scenes/units/units_enemy/ai_enemy_skeleton.gd" id="4_bgeor"]
 
 [node name="EnemySkeleton" instance=ExtResource("1_akk1r")]
 is_enemy = true
@@ -12,3 +13,8 @@ sprite_frames = ExtResource("2_p1yjk")
 frame_progress = 0.244013
 
 [node name="ActionSword" parent="ManagerActions" index="1" instance=ExtResource("3_ykdqh")]
+
+[node name="AIEnemy" type="Node" parent="." index="2" node_paths=PackedStringArray("unit")]
+script = ExtResource("4_bgeor")
+unit = NodePath("..")
+metadata/_custom_type_script = "uid://dg7a4nlbijxwi"

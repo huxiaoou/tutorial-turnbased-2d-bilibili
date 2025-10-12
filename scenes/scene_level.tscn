@@ -45,19 +45,19 @@ tile_set = ExtResource("5_20ppl")
 [node name="GridIndicator" parent="." instance=ExtResource("2_ei8re")]
 
 [node name="UnitKnight" parent="." instance=ExtResource("10_lnjqj")]
-position = Vector2(264, 200)
+position = Vector2(264, 184)
 
 [node name="UnitArcher" parent="." instance=ExtResource("11_bjvi2")]
-position = Vector2(264, 152)
+position = Vector2(200, 184)
 
 [node name="UnitWizard" parent="." instance=ExtResource("12_sghvq")]
-position = Vector2(312, 200)
+position = Vector2(296, 152)
 
 [node name="EnemySkeleton" parent="." instance=ExtResource("13_xuaps")]
-position = Vector2(296, 184)
+position = Vector2(552, 264)
 
 [node name="EnemyOrc" parent="." instance=ExtResource("14_y4c5b")]
-position = Vector2(280, 168)
+position = Vector2(312, 200)
 
 [node name="EnemyNecromancer" parent="." instance=ExtResource("15_fpjne")]
-position = Vector2(312, 152)
+position = Vector2(552, 160)

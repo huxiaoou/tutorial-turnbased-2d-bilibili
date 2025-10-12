@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbsihatkqu3ml"]
+[gd_scene load_steps=5 format=3 uid="uid://cbsihatkqu3ml"]
 
 [ext_resource type="PackedScene" uid="uid://t4evnlhbrmw4" path="res://scenes/units/unit.tscn" id="1_rvbkm"]
 [ext_resource type="SpriteFrames" uid="uid://tcwwpgi61ecq" path="res://resources/animations/anim_enemy/anim_orc.tres" id="2_euajl"]
 [ext_resource type="PackedScene" uid="uid://d4hwnhgkxlxsn" path="res://scenes/actions/action_bow.tscn" id="3_wddkw"]
+[ext_resource type="Script" uid="uid://clrejc6wjlat4" path="res://scenes/units/units_enemy/ai_enemy_orc.gd" id="4_rknik"]
 
 [node name="EnemyOrc" instance=ExtResource("1_rvbkm")]
 is_enemy = true
@@ -12,3 +13,8 @@ sprite_frames = ExtResource("2_euajl")
 frame_progress = 0.982234
 
 [node name="ActionBow" parent="ManagerActions" index="1" instance=ExtResource("3_wddkw")]
+
+[node name="AIEnemy" type="Node" parent="." index="2" node_paths=PackedStringArray("unit")]
+script = ExtResource("4_rknik")
+unit = NodePath("..")
+metadata/_custom_type_script = "uid://dg7a4nlbijxwi"
