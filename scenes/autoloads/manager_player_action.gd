@@ -37,6 +37,9 @@ func try_perform_action_selected() -> void:
 	var target_grid_position: Vector2i = ManagerGrid.get_mouse_grid_position()
 	if not action_selected.get_action_grids().has(target_grid_position):
 		return
+	if unit_selected.cur_action_point < action_selected.action_point_cost:
+		print("Not enough action points for " + unit_selected.name + " using " + action_selected.name)
+		return
 	self.is_performing_action = true
 	self.action_selected.start(
 		target_grid_position,
