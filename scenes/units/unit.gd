@@ -2,6 +2,7 @@ extends Node2D
 class_name Unit
 
 signal unit_died(unit: Unit)
+signal action_points_changed(action_point: int)
 
 @onready var manager_actions: ManagerActions = $ManagerActions
 @onready var area_unit: AreaUnit = $AreaUnit
@@ -12,11 +13,15 @@ signal unit_died(unit: Unit)
 @export var is_enemy: bool = false
 @export var max_action_points: int = 2
 
-var cur_action_point: int
 var is_dead: bool = false
 
 var grid_position: Vector2i:
 	get: return ManagerGrid.get_grid_position(self.global_position)
+
+var cur_action_point: int:
+	set (value):
+		cur_action_point = value
+		action_points_changed.emit(value)
 
 func _ready() -> void:
 	ManagerTurn.turn_player_started.connect(on_turn_player_started)
