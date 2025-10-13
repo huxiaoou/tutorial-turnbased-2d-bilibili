@@ -1,0 +1,176 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf8s6o6705tcn"]
+
+[ext_resource type="Texture2D" uid="uid://1rtav72k068k" path="res://assets/ui/SPS_GUI.png" id="1_r114j"]
+[ext_resource type="Texture2D" uid="uid://b4ce2s5t7ct7p" path="res://assets/characters/Knight.png" id="2_0x6ir"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0x6ir"]
+atlas = ExtResource("1_r114j")
+region = Rect2(136, 64, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5coh"]
+atlas = ExtResource("2_0x6ir")
+region = Rect2(0, 0, 24, 24)
+
+[node name="SceneStartMenu" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UIUnitSelection" type="PanelContainer" parent="CanvasLayer/Background"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Background/UIUnitSelection"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer"]
+layout_mode = 2
+
+[node name="ContainerUnitsInfo" type="HBoxContainer" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="UnitSelection" type="VBoxContainer" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitSelection"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Units"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContainerUnitCard" type="VBoxContainer" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitSelection"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+[node name="UIUnitCard" type="Button" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitSelection/ContainerUnitCard"]
+custom_minimum_size = Vector2(144, 96)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Knight"
+
+[node name="SelectedIndicator" type="TextureRect" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitSelection/ContainerUnitCard/UIUnitCard"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -48.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = SubResource("AtlasTexture_0x6ir")
+
+[node name="UIUnitCard2" type="Button" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitSelection/ContainerUnitCard"]
+custom_minimum_size = Vector2(144, 96)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Knight"
+
+[node name="SelectedIndicator" type="TextureRect" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitSelection/ContainerUnitCard/UIUnitCard2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -48.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = SubResource("AtlasTexture_0x6ir")
+
+[node name="UIUnitCard3" type="Button" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitSelection/ContainerUnitCard"]
+custom_minimum_size = Vector2(144, 96)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Knight"
+
+[node name="SelectedIndicator" type="TextureRect" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitSelection/ContainerUnitCard/UIUnitCard3"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -48.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = SubResource("AtlasTexture_0x6ir")
+
+[node name="UnitInfo" type="PanelContainer" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo"]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitInfo"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitInfo/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="IconName" type="HBoxContainer" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitInfo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="IconUnit" type="TextureRect" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitInfo/MarginContainer/VBoxContainer/IconName"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_x5coh")
+
+[node name="NameUnit" type="Label" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitInfo/MarginContainer/VBoxContainer/IconName"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Knight"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionUnit" type="Label" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitInfo/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "This is a description for the knight."
+autowrap_mode = 2
+
+[node name="ContainerButton" type="HBoxContainer" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 32
+
+[node name="ButtonStart" type="Button" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerButton"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
+[node name="ButtonBack" type="Button" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerButton"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Back"
