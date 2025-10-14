@@ -1,6 +1,8 @@
 extends Button
 class_name UIUnitCard
 
+signal unit_selected(unit_resource: UnitResource)
+signal unit_deselected(unit_resource: UnitResource)
 signal unit_hovered(unit_resource: UnitResource)
 
 @onready var selected_indicator: TextureRect = $SelectedIndicator
@@ -21,10 +23,13 @@ func on_button_pressed() -> void:
 	if is_selected:
 		is_selected = false
 		selected_indicator.visible = false
+		unit_deselected.emit(unit_resource)
 	else:
-		is_selected = true
-		selected_indicator.visible = true
-	
+		if ManagerGame.selected_player_resources.size() < ManagerGame.maximum_unit_count:
+			is_selected = true
+			selected_indicator.visible = true
+			unit_selected.emit(unit_resource)
+
 func on_mouse_entered() -> void:
 	unit_hovered.emit(unit_resource)
 	return

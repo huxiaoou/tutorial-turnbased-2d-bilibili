@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="tutorial-turnbased-2d-bilibili"
-run/main_scene="uid://bv2jummn8t4ty"
+run/main_scene="uid://cf8s6o6705tcn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

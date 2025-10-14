@@ -18,8 +18,11 @@ func _ready() -> void:
 		container_unit_card.add_child(ui_unit_card)
 		ui_unit_card.set_up(unit_resource)
 		ui_unit_card.unit_hovered.connect(on_unit_hovered)
+		ui_unit_card.unit_selected.connect(on_unit_selected)
+		ui_unit_card.unit_deselected.connect(on_unit_deselected)
 	
 func on_button_start_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/scene_level.tscn")
 	return
 
 func on_button_back_pressed() -> void:
@@ -29,4 +32,11 @@ func on_unit_hovered(unit_resource: UnitResource) -> void:
 	icon_unit.texture = unit_resource.unit_icon
 	name_unit.text = unit_resource.unit_name
 	description_unit.text = unit_resource.unit_description
-	
+
+func on_unit_selected(unit_resource: UnitResource) -> void:
+	ManagerGame.selected_player_resources.append(unit_resource)
+	return
+
+func on_unit_deselected(unit_resource: UnitResource) -> void:
+	ManagerGame.selected_player_resources.erase(unit_resource)
+	return

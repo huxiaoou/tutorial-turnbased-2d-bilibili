@@ -1,10 +1,12 @@
 extends Node
 
-@onready var layer_visual: TileMapLayer = $LayerVisual
+@onready var layer_visual: TileMapLayer = $Map/LayerVisual
 @onready var state_machine: StateMachine = $StateMachine
+@export var player_spawn_positions: Array[Node2D]
 
 func _ready() -> void:
 	ManagerGrid.layer_vis = layer_visual
+	ManagerGame.spawn_player_units()
 	for unit: Unit in ManagerGame.player_units:
 		ManagerGrid.set_grid_walkable(unit.grid_position, false)
 		ManagerGrid.set_grid_occupant(unit.grid_position, unit)
