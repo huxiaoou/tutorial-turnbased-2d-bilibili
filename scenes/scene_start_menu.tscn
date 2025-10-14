@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf8s6o6705tcn"]
+[gd_scene load_steps=9 format=3 uid="uid://cf8s6o6705tcn"]
 
-[ext_resource type="Texture2D" uid="uid://1rtav72k068k" path="res://assets/ui/SPS_GUI.png" id="1_r114j"]
+[ext_resource type="Script" uid="uid://c64jlxkk5nmt1" path="res://scenes/ui/ui_unit_selection.gd" id="1_0x6ir"]
+[ext_resource type="PackedScene" uid="uid://5o1u84cnh7uh" path="res://scenes/ui/ui_unit_card.tscn" id="1_llvyx"]
 [ext_resource type="Texture2D" uid="uid://b4ce2s5t7ct7p" path="res://assets/characters/Knight.png" id="2_0x6ir"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0x6ir"]
-atlas = ExtResource("1_r114j")
-region = Rect2(136, 64, 8, 8)
+[ext_resource type="Script" uid="uid://bhokc2j478ohy" path="res://resources/unit_resource.gd" id="2_atf0o"]
+[ext_resource type="Resource" uid="uid://da080g8g0derc" path="res://resources/units/unit_resource_knight.tres" id="3_5ttaw"]
+[ext_resource type="Resource" uid="uid://boa11313tp26a" path="res://resources/units/unit_resource_archer.tres" id="4_m7pmk"]
+[ext_resource type="Resource" uid="uid://cob0psehxlbkg" path="res://resources/units/unit_resource_wizard.tres" id="5_ye1pr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x5coh"]
 atlas = ExtResource("2_0x6ir")
@@ -26,6 +27,9 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_0x6ir")
+scene_ui_unit_card = ExtResource("1_llvyx")
+unit_resources = Array[ExtResource("2_atf0o")]([ExtResource("3_5ttaw"), ExtResource("4_m7pmk"), ExtResource("5_ye1pr")])
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Background/UIUnitSelection"]
 layout_mode = 2
@@ -54,69 +58,6 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 24
-
-[node name="UIUnitCard" type="Button" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitSelection/ContainerUnitCard"]
-custom_minimum_size = Vector2(144, 96)
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Knight"
-
-[node name="SelectedIndicator" type="TextureRect" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitSelection/ContainerUnitCard/UIUnitCard"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -48.0
-offset_top = -48.0
-offset_right = -8.0
-offset_bottom = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = SubResource("AtlasTexture_0x6ir")
-
-[node name="UIUnitCard2" type="Button" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitSelection/ContainerUnitCard"]
-custom_minimum_size = Vector2(144, 96)
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Knight"
-
-[node name="SelectedIndicator" type="TextureRect" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitSelection/ContainerUnitCard/UIUnitCard2"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -48.0
-offset_top = -48.0
-offset_right = -8.0
-offset_bottom = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = SubResource("AtlasTexture_0x6ir")
-
-[node name="UIUnitCard3" type="Button" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitSelection/ContainerUnitCard"]
-custom_minimum_size = Vector2(144, 96)
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Knight"
-
-[node name="SelectedIndicator" type="TextureRect" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitSelection/ContainerUnitCard/UIUnitCard3"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -48.0
-offset_top = -48.0
-offset_right = -8.0
-offset_bottom = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = SubResource("AtlasTexture_0x6ir")
 
 [node name="UnitInfo" type="PanelContainer" parent="CanvasLayer/Background/UIUnitSelection/MarginContainer/VBoxContainer/ContainerUnitsInfo"]
 custom_minimum_size = Vector2(512, 0)

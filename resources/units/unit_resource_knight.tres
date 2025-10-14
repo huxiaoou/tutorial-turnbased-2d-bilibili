@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UnitResource" load_steps=5 format=3 uid="uid://da080g8g0derc"]
+
+[ext_resource type="Script" uid="uid://bhokc2j478ohy" path="res://resources/unit_resource.gd" id="1_r6w16"]
+[ext_resource type="Texture2D" uid="uid://b4ce2s5t7ct7p" path="res://assets/characters/Knight.png" id="2_h8dck"]
+[ext_resource type="PackedScene" uid="uid://bkw3mmjq5tuys" path="res://scenes/units/units_player/unit_knight.tscn" id="3_ywvnr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf20t"]
+atlas = ExtResource("2_h8dck")
+region = Rect2(0, 0, 24, 24)
+
+[resource]
+script = ExtResource("1_r6w16")
+unit_icon = SubResource("AtlasTexture_mf20t")
+unit_name = "Knight"
+unit_description = "Description for knight"
+unit_scene = ExtResource("3_ywvnr")
+metadata/_custom_type_script = "uid://bhokc2j478ohy"

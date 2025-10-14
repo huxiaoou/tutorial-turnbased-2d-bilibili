@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UnitResource" load_steps=5 format=3 uid="uid://cob0psehxlbkg"]
+
+[ext_resource type="Script" uid="uid://bhokc2j478ohy" path="res://resources/unit_resource.gd" id="1_edws1"]
+[ext_resource type="Texture2D" uid="uid://jcqgkd60jqo4" path="res://assets/characters/Wizard.png" id="2_edws1"]
+[ext_resource type="PackedScene" uid="uid://c4s8p4ve1qt3e" path="res://scenes/units/units_player/unit_wizard.tscn" id="3_kgkfi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1c00"]
+atlas = ExtResource("2_edws1")
+region = Rect2(0, 0, 24, 24)
+
+[resource]
+script = ExtResource("1_edws1")
+unit_icon = SubResource("AtlasTexture_g1c00")
+unit_name = "Wizard"
+unit_description = "Description for wizard"
+unit_scene = ExtResource("3_kgkfi")
+metadata/_custom_type_script = "uid://bhokc2j478ohy"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UnitResource" load_steps=5 format=3 uid="uid://boa11313tp26a"]
+
+[ext_resource type="Script" uid="uid://bhokc2j478ohy" path="res://resources/unit_resource.gd" id="1_dhu06"]
+[ext_resource type="Texture2D" uid="uid://ctfxj5r8cvlru" path="res://assets/characters/Archer.png" id="2_dhu06"]
+[ext_resource type="PackedScene" uid="uid://b67dc6xw68cyo" path="res://scenes/units/units_player/unit_archer.tscn" id="3_b7bl6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llulh"]
+atlas = ExtResource("2_dhu06")
+region = Rect2(0, 0, 24, 24)
+
+[resource]
+script = ExtResource("1_dhu06")
+unit_icon = SubResource("AtlasTexture_llulh")
+unit_name = "Archer"
+unit_description = "Description for archer"
+unit_scene = ExtResource("3_b7bl6")
+metadata/_custom_type_script = "uid://bhokc2j478ohy"
