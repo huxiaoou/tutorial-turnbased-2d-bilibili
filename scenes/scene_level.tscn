@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bv2jummn8t4ty"]
+[gd_scene load_steps=15 format=4 uid="uid://bv2jummn8t4ty"]
 
 [ext_resource type="TileSet" uid="uid://uakrw1s8mhy5" path="res://resources/tile_set_nav.tres" id="1_b3lus"]
 [ext_resource type="PackedScene" uid="uid://dqtbl3x7cfkkq" path="res://scenes/ui/ui_game.tscn" id="1_uj0sh"]
@@ -9,9 +9,13 @@
 [ext_resource type="Script" uid="uid://bc0ofvyucpbl8" path="res://scenes/state_machine/state_turn_player.gd" id="4_lnjqj"]
 [ext_resource type="TileSet" uid="uid://bqst0lm8obls4" path="res://resources/tile_set_visualize.tres" id="5_20ppl"]
 [ext_resource type="Script" uid="uid://b5q085ye26883" path="res://scenes/state_machine/state_turn_enemy.gd" id="5_urbar"]
+[ext_resource type="Script" uid="uid://brs84mgneu30m" path="res://scenes/camera_control.gd" id="13_bjvi2"]
 [ext_resource type="PackedScene" uid="uid://bo1cg7l4v1kjm" path="res://scenes/units/units_enemy/enemy_skeleton.tscn" id="13_xuaps"]
 [ext_resource type="PackedScene" uid="uid://cbsihatkqu3ml" path="res://scenes/units/units_enemy/enemy_orc.tscn" id="14_y4c5b"]
 [ext_resource type="PackedScene" uid="uid://dbp2j23abnpxu" path="res://scenes/units/units_enemy/enemy_necromancer.tscn" id="15_fpjne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnjqj"]
+size = Vector2(2048, 1216)
 
 [node name="SceneLevel" type="Node" node_paths=PackedStringArray("player_spawn_positions")]
 script = ExtResource("1_voka6")
@@ -65,3 +69,16 @@ position = Vector2(440, 200)
 
 [node name="PosPlayerSpawn3" type="Node2D" parent="UnitsPlayer"]
 position = Vector2(376, 200)
+
+[node name="CameraControl" type="Node2D" parent="."]
+position = Vector2(960, 544)
+script = ExtResource("13_bjvi2")
+
+[node name="Camera2D" type="Camera2D" parent="CameraControl"]
+
+[node name="CameraBoundary" type="Area2D" parent="."]
+position = Vector2(960, 544)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraBoundary"]
+shape = SubResource("RectangleShape2D_lnjqj")
+disabled = true
