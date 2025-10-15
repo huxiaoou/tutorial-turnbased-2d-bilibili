@@ -15,7 +15,6 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape"):
 		if game_finished:
 			return
-		print("aaa")
 		label.text = "Return to Menu"
 		visible = !visible
 
@@ -30,4 +29,6 @@ func on_game_over() -> void:
 	game_finished = true
 	
 func on_exit_button_pressed() -> void:
+	ManagerGame.exit_game()
+	get_tree().change_scene_to_file("res://scenes/scene_start_menu.tscn")
 	print("Exit Game")

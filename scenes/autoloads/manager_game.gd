@@ -43,3 +43,14 @@ func on_unit_died(unit: Unit) -> void:
 		print("Game Over")
 		game_over.emit()
 	return
+
+func exit_game() -> void:
+	selected_player_resources.clear()
+	player_units.clear()
+	enemy_units.clear()
+	ManagerGrid.layer_nav = null
+	ManagerGrid.layer_vis = null
+	ManagerPlayerAction.is_performing_action = false
+	ManagerPlayerAction.action_selected = null
+	ManagerPlayerAction.unit_selected = null
+	ManagerEnemyAction.is_performing_action = false
