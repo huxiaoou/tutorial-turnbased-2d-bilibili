@@ -40,6 +40,7 @@ func on_unit_died(unit: Unit) -> void:
 	if unit.is_enemy and enemy_units.is_empty():
 		print("Victory")
 		victory.emit()
+		ManagerSave.save_data(selected_level_resource.level_name)
 	if not unit.is_enemy and player_units.is_empty():
 		print("Game Over")
 		game_over.emit()

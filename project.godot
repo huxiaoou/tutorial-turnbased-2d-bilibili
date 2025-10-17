@@ -22,6 +22,7 @@ ManagerPlayerAction="*res://scenes/autoloads/manager_player_action.tscn"
 ManagerGame="*res://scenes/autoloads/manager_game.tscn"
 ManagerTurn="*res://scenes/autoloads/manager_turn.tscn"
 ManagerEnemyAction="*res://scenes/autoloads/manager_enemy_action.tscn"
+ManagerSave="*res://scenes/autoloads/manager_save.tscn"
 
 [display]
 
