@@ -1,11 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://cf8s6o6705tcn"]
+[gd_scene load_steps=15 format=3 uid="uid://cf8s6o6705tcn"]
 
 [ext_resource type="Script" uid="uid://c64jlxkk5nmt1" path="res://scenes/ui/ui_unit_selection.gd" id="1_0x6ir"]
 [ext_resource type="PackedScene" uid="uid://5o1u84cnh7uh" path="res://scenes/ui/ui_unit_card.tscn" id="1_llvyx"]
+[ext_resource type="Script" uid="uid://dwsn3iy7aav4e" path="res://scenes/ui/ui_level_selection.gd" id="1_m7pmk"]
 [ext_resource type="Texture2D" uid="uid://b4ce2s5t7ct7p" path="res://assets/characters/Knight.png" id="2_0x6ir"]
+[ext_resource type="PackedScene" uid="uid://dna8svuk871l3" path="res://scenes/ui/ui_level_card.tscn" id="2_5cfnu"]
 [ext_resource type="Script" uid="uid://bhokc2j478ohy" path="res://resources/unit_resource.gd" id="2_atf0o"]
+[ext_resource type="Script" uid="uid://bpnd0svl7dtnj" path="res://resources/levels/resource_level.gd" id="2_jil6q"]
+[ext_resource type="Resource" uid="uid://b4e5aen4o2f4y" path="res://resources/levels/level_1.tres" id="3_5cfnu"]
 [ext_resource type="Resource" uid="uid://da080g8g0derc" path="res://resources/units/unit_resource_knight.tres" id="3_5ttaw"]
+[ext_resource type="Resource" uid="uid://lxnx4wpwvs5n" path="res://resources/levels/level_2.tres" id="4_fgfu2"]
 [ext_resource type="Resource" uid="uid://boa11313tp26a" path="res://resources/units/unit_resource_archer.tres" id="4_m7pmk"]
+[ext_resource type="Resource" uid="uid://ck0ocymc7a3it" path="res://resources/levels/level_3.tres" id="5_c5uv6"]
 [ext_resource type="Resource" uid="uid://cob0psehxlbkg" path="res://resources/units/unit_resource_wizard.tres" id="5_ye1pr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x5coh"]
@@ -23,7 +29,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="UILevelSelection" type="PanelContainer" parent="CanvasLayer/Background"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_m7pmk")
+scene_level_card_ui = ExtResource("2_5cfnu")
+resources_level = Array[ExtResource("2_jil6q")]([ExtResource("3_5cfnu"), ExtResource("4_fgfu2"), ExtResource("5_c5uv6")])
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Background/UILevelSelection"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Background/UILevelSelection/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="CanvasLayer/Background/UILevelSelection/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Level Selection"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContainerLevel" type="GridContainer" parent="CanvasLayer/Background/UILevelSelection/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 4
+
 [node name="UIUnitSelection" type="PanelContainer" parent="CanvasLayer/Background"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

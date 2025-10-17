@@ -5,6 +5,7 @@ signal victory()
 
 var selected_player_resources: Array[UnitResource]
 var maximum_unit_count: int = 3
+var selected_level_resource: ResourceLevel
 var player_units: Array[Unit]
 var enemy_units: Array[Unit]
 

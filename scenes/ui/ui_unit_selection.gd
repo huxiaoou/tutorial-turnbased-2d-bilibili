@@ -1,5 +1,6 @@
 extends PanelContainer
 
+@onready var ui_level_selection: PanelContainer = $"../UILevelSelection"
 @onready var button_start: Button = $MarginContainer/VBoxContainer/ContainerButton/ButtonStart
 @onready var button_back: Button = $MarginContainer/VBoxContainer/ContainerButton/ButtonBack
 @onready var container_unit_card: VBoxContainer = $MarginContainer/VBoxContainer/ContainerUnitsInfo/UnitSelection/ContainerUnitCard
@@ -22,10 +23,12 @@ func _ready() -> void:
 		ui_unit_card.unit_deselected.connect(on_unit_deselected)
 	
 func on_button_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/scene_level.tscn")
+	get_tree().change_scene_to_packed(ManagerGame.selected_level_resource.level_scene)
 	return
 
 func on_button_back_pressed() -> void:
+	ui_level_selection.visible = true
+	visible = false
 	return
 
 func on_unit_hovered(unit_resource: UnitResource) -> void:
