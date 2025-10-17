@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqtbl3x7cfkkq"]
+[gd_scene load_steps=6 format=3 uid="uid://dqtbl3x7cfkkq"]
 
 [ext_resource type="Script" uid="uid://dh1gvwkdridl1" path="res://scenes/ui/ui_unit_actions.gd" id="1_p6oq4"]
+[ext_resource type="Theme" uid="uid://b7e5uy5xmgtvi" path="res://resources/theme_ui.tres" id="1_tpt2v"]
 [ext_resource type="PackedScene" uid="uid://csf3yx3t7uwds" path="res://scenes/ui/ui_action_card.tscn" id="2_7nfdw"]
 [ext_resource type="Script" uid="uid://0vf2fgs8gih7" path="res://scenes/ui/ui_turn.gd" id="3_cb1ij"]
 [ext_resource type="Script" uid="uid://duqfm4me7dpgr" path="res://scenes/ui/ui_game_end.gd" id="4_k8msy"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_tpt2v")
 theme_override_constants/margin_bottom = 24
 script = ExtResource("1_p6oq4")
 ui_action_card_scene = ExtResource("2_7nfdw")
@@ -33,6 +35,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_tpt2v")
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
@@ -62,6 +65,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
+theme = ExtResource("1_tpt2v")
 script = ExtResource("4_k8msy")
 
 [node name="PanelContainer" type="PanelContainer" parent="UIGameEnd"]

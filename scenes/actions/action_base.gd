@@ -3,6 +3,7 @@ class_name	ActionBase
 
 @export var action_id: String
 @export var action_name: String
+@export var action_icon: Texture2D
 @export var grid_color: Color = Color.WHITE
 @export var action_point_cost: int = 1
 

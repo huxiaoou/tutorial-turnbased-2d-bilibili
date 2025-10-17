@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4hwnhgkxlxsn"]
+[gd_scene load_steps=5 format=3 uid="uid://d4hwnhgkxlxsn"]
 
 [ext_resource type="Script" uid="uid://dauehs47mbrvs" path="res://scenes/actions/action_bow.gd" id="1_toke5"]
 [ext_resource type="PackedScene" uid="uid://cg51jptijft1l" path="res://scenes/weapons/bow.tscn" id="2_fu4od"]
+[ext_resource type="Texture2D" uid="uid://dbhh1djayboxw" path="res://assets/ui/SPS_Items.png" id="3_o2gm7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oif55"]
+atlas = ExtResource("3_o2gm7")
+region = Rect2(32, 32, 7, 8)
 
 [node name="ActionBow" type="Node"]
 script = ExtResource("1_toke5")
 scene_bow = ExtResource("2_fu4od")
 action_id = "action_bow"
 action_name = "Bow"
+action_icon = SubResource("AtlasTexture_oif55")
 grid_color = Color(0, 0.53, 0.00883332, 1)
 metadata/_custom_type_script = "uid://dd811uvlcn6xx"

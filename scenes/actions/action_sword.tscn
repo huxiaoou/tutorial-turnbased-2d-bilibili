@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://co2fpjcseh17l"]
+[gd_scene load_steps=5 format=3 uid="uid://co2fpjcseh17l"]
 
 [ext_resource type="Script" uid="uid://b10sr636kr54w" path="res://scenes/actions/action_sword.gd" id="1_7benf"]
 [ext_resource type="PackedScene" uid="uid://6cbhh5e5qcva" path="res://scenes/weapons/sword.tscn" id="2_1y7fa"]
+[ext_resource type="Texture2D" uid="uid://dbhh1djayboxw" path="res://assets/ui/SPS_Items.png" id="3_b6kbk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwutb"]
+atlas = ExtResource("3_b6kbk")
+region = Rect2(0, 16, 8, 8)
 
 [node name="ActionSword" type="Node"]
 script = ExtResource("1_7benf")
 scene_sword = ExtResource("2_1y7fa")
 action_id = "action_sword"
 action_name = "Sword"
+action_icon = SubResource("AtlasTexture_cwutb")
 grid_color = Color(0.117647, 0.137255, 0.807843, 1)
 metadata/_custom_type_script = "uid://dd811uvlcn6xx"

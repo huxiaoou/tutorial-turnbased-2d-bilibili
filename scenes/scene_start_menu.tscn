@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cf8s6o6705tcn"]
+[gd_scene load_steps=16 format=3 uid="uid://cf8s6o6705tcn"]
 
 [ext_resource type="Script" uid="uid://c64jlxkk5nmt1" path="res://scenes/ui/ui_unit_selection.gd" id="1_0x6ir"]
+[ext_resource type="Theme" uid="uid://b7e5uy5xmgtvi" path="res://resources/theme_ui.tres" id="1_fgfu2"]
 [ext_resource type="PackedScene" uid="uid://5o1u84cnh7uh" path="res://scenes/ui/ui_unit_card.tscn" id="1_llvyx"]
 [ext_resource type="Script" uid="uid://dwsn3iy7aav4e" path="res://scenes/ui/ui_level_selection.gd" id="1_m7pmk"]
 [ext_resource type="Texture2D" uid="uid://b4ce2s5t7ct7p" path="res://assets/characters/Knight.png" id="2_0x6ir"]
@@ -33,6 +34,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_fgfu2")
 script = ExtResource("1_m7pmk")
 scene_level_card_ui = ExtResource("2_5cfnu")
 resources_level = Array[ExtResource("2_jil6q")]([ExtResource("3_5cfnu"), ExtResource("4_fgfu2"), ExtResource("5_c5uv6")])
@@ -66,6 +68,7 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_fgfu2")
 script = ExtResource("1_0x6ir")
 scene_ui_unit_card = ExtResource("1_llvyx")
 unit_resources = Array[ExtResource("2_atf0o")]([ExtResource("3_5ttaw"), ExtResource("4_m7pmk"), ExtResource("5_ye1pr")])
