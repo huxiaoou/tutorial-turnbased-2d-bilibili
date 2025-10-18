@@ -11,6 +11,7 @@ var unit_resource: UnitResource
 var is_selected: bool = false
 
 func _ready() -> void:
+	ManagerAudio.register_button(self)
 	pressed.connect(on_button_pressed)
 	mouse_entered.connect(on_mouse_entered)
 	selected_indicator.visible = false

@@ -1,7 +1,10 @@
 extends ActionBase
+
 class_name ActionFireball
 
 @export var scene_fireball: PackedScene
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 
 func start(target_grid_position: Vector2i, _on_action_finished: Callable) -> void:
 	super.start(target_grid_position, _on_action_finished)
@@ -13,7 +16,8 @@ func start(target_grid_position: Vector2i, _on_action_finished: Callable) -> voi
 	get_tree().current_scene.add_child(fireball)
 	fireball.global_position = unit.slot_weapon.global_position
 	fireball.set_up(finish, unit, target_grid_position)
-	
+	audio_stream_player.play()
+
 
 func get_action_grids(unit_grid: Vector2i = self.unit.grid_position) -> Array[Vector2i]:
 	var results: Array[Vector2i] = []

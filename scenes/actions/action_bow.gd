@@ -1,7 +1,10 @@
 extends ActionBase
+
 class_name ActionBow
 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @export var scene_bow: PackedScene
+
 
 func start(target_grid_position: Vector2i, _on_action_finished: Callable) -> void:
 	super.start(target_grid_position, _on_action_finished)
@@ -12,7 +15,9 @@ func start(target_grid_position: Vector2i, _on_action_finished: Callable) -> voi
 	var bow: Bow = self.scene_bow.instantiate()
 	unit.slot_weapon.add_child(bow)
 	bow.setup(finish, unit, target_grid_position)
-	
+	audio_stream_player.play()
+
+
 func get_action_grids(unit_grid: Vector2i = self.unit.grid_position) -> Array[Vector2i]:
 	var results: Array[Vector2i] = []
 	var max_range: int = 3
@@ -26,6 +31,7 @@ func get_action_grids(unit_grid: Vector2i = self.unit.grid_position) -> Array[Ve
 		if self.is_valid_action_grid(unit_grid, potential_grid):
 			results.append(potential_grid)
 	return results
+
 
 func is_valid_action_grid(unit_grid: Vector2i, grid_position: Vector2i) -> bool:
 	if self.is_obstacle(grid_position):

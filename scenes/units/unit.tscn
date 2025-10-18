@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://t4evnlhbrmw4"]
+[gd_scene load_steps=14 format=3 uid="uid://t4evnlhbrmw4"]
 
 [ext_resource type="Script" uid="uid://cc3cr1st5ubru" path="res://scenes/units/unit.gd" id="1_qgilm"]
 [ext_resource type="SpriteFrames" uid="uid://dcqkrlwx8an0u" path="res://resources/animations/anim_players/anim_knight.tres" id="2_fe0lq"]
@@ -7,9 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://bqvvx1kpcriw6" path="res://scenes/units/health.tscn" id="6_rk2mp"]
 [ext_resource type="PackedScene" uid="uid://bvpxnm6n0x074" path="res://scenes/ui/ui_unit_world.tscn" id="7_44d7s"]
 [ext_resource type="Script" uid="uid://cmhuth3eh4km7" path="res://scenes/units/area_unit.gd" id="8_fe0lq"]
+[ext_resource type="AudioStream" uid="uid://qfdiedvaolvx" path="res://assets/sounds/SFX_Hit_1.wav" id="8_mvvv6"]
+[ext_resource type="AudioStream" uid="uid://bho52rnb3jx7x" path="res://assets/sounds/SFX_Hit_2.wav" id="9_npoq2"]
+[ext_resource type="AudioStream" uid="uid://coq6o5gb53d7o" path="res://assets/sounds/SFX_Hit_3.wav" id="10_v7yoe"]
+[ext_resource type="AudioStream" uid="uid://c7g3uwt0bkbh1" path="res://assets/sounds/SFX_Death.wav" id="11_wy2ti"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44d7s"]
 size = Vector2(16, 16)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_30oxw"]
+streams_count = 3
+stream_0/stream = ExtResource("8_mvvv6")
+stream_1/stream = ExtResource("9_npoq2")
+stream_2/stream = ExtResource("10_v7yoe")
 
 [node name="Unit" type="Node2D"]
 script = ExtResource("1_qgilm")
@@ -39,3 +49,11 @@ shape = SubResource("RectangleShape2D_44d7s")
 position = Vector2(-12, -21)
 unit = NodePath("..")
 health = NodePath("../Health")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="AudioPlayerHit" type="AudioStreamPlayer" parent="Sounds"]
+stream = SubResource("AudioStreamRandomizer_30oxw")
+
+[node name="AudioPlayerDie" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("11_wy2ti")

@@ -1,7 +1,10 @@
 extends ActionBase
+
 class_name ActionSword
 
 @export var scene_sword: PackedScene
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 
 func start(target_grid_position: Vector2i, _on_action_finished: Callable) -> void:
 	super.start(target_grid_position, _on_action_finished)
@@ -12,6 +15,8 @@ func start(target_grid_position: Vector2i, _on_action_finished: Callable) -> voi
 	var sword: Sword = scene_sword.instantiate()
 	unit.slot_weapon.add_child(sword)
 	sword.set_up(finish, unit, target_grid_position)
+	audio_stream_player.play()
+
 
 func get_action_grids(unit_grid: Vector2i = self.unit.grid_position) -> Array[Vector2i]:
 	var results: Array[Vector2i] = []
@@ -24,6 +29,6 @@ func get_action_grids(unit_grid: Vector2i = self.unit.grid_position) -> Array[Ve
 			if self.is_obstacle(potential_grid):
 				continue
 			if self.is_occupant_ally(potential_grid):
-				continue	
+				continue
 			results.append(potential_grid)
 	return results

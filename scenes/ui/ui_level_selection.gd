@@ -5,6 +5,7 @@ extends PanelContainer
 @export var scene_level_card_ui: PackedScene
 @export var resources_level: Array[ResourceLevel]
 
+
 func _ready() -> void:
 	var data_save: DataSave = ManagerSave.load_data()
 	for resource_level in resources_level:
@@ -15,6 +16,7 @@ func _ready() -> void:
 		if data_save and data_save.level_completed.has(resource_level.level_name):
 			ui_level_card.completed_tag.visible = true
 	return
+
 
 func on_level_selected(resource_level: ResourceLevel) -> void:
 	ManagerGame.selected_level_resource = resource_level

@@ -9,6 +9,7 @@ var selected_level_resource: ResourceLevel
 var player_units: Array[Unit]
 var enemy_units: Array[Unit]
 
+
 func register_unit(unit: Unit) -> void:
 	if unit.is_enemy:
 		enemy_units.append(unit)
@@ -16,6 +17,7 @@ func register_unit(unit: Unit) -> void:
 		player_units.append(unit)
 	unit.unit_died.connect(on_unit_died)
 	return
+
 
 func unregister_unit(unit: Unit) -> void:
 	if unit.is_enemy:
@@ -26,15 +28,17 @@ func unregister_unit(unit: Unit) -> void:
 			ManagerPlayerAction.set_unit_selected(player_units[0])
 	return
 
+
 func spawn_player_units() -> void:
 	var spawn_pos_idx: int = 0
-	var spawn_positions: Array[Node2D] =  get_tree().current_scene.player_spawn_positions
+	var spawn_positions: Array[Node2D] = get_tree().current_scene.player_spawn_positions
 	for unit_resource: UnitResource in selected_player_resources:
 		if spawn_pos_idx < spawn_positions.size():
 			var unit: Unit = unit_resource.unit_scene.instantiate()
 			get_tree().current_scene.add_child(unit)
 			unit.global_position = spawn_positions[spawn_pos_idx].global_position
 			spawn_pos_idx += 1
+
 
 func on_unit_died(unit: Unit) -> void:
 	if unit.is_enemy and enemy_units.is_empty():
@@ -45,6 +49,7 @@ func on_unit_died(unit: Unit) -> void:
 		print("Game Over")
 		game_over.emit()
 	return
+
 
 func exit_game() -> void:
 	selected_player_resources.clear()
